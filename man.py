@@ -76,7 +76,7 @@ class IRCBot:
                         if reg.search(content) is not None and msg[0] not in self.ignored:
                             self.sendMsg(msg[2], reg.search(content).group(2))
                         elif content == ".bots":
-                            self.sendMsg(msg[2], "Reporting in! [Python]")
+                            self.sendMsg(msg[2], "Reporting in! [Python] https://github.com/Ninja3047/IRCBot")
                         elif re.match(r"Reporting in!", content) is not None and msg[0] not in self.ignored:
                             self.ignored.append(msg[0])
                             print("Ignored %s" % msg[0])
