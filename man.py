@@ -81,7 +81,7 @@ class IRCBot:
                         elif re.match(r"Reporting in!", content) is not None and msg[0] not in self.ignored:
                             self.ignored.append(msg[0])
                             print("Ignored %s" % msg[0])
-                elif len(msg) > 1 and msg[1] == "INVITE":
+                if len(msg) > 1 and msg[1] == "INVITE":
                     print("Joining %s" % content)
                     yield from self.join(content)
                 if len(msg) > 1 and msg[0] == "PING":
