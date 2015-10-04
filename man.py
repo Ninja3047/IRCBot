@@ -3,6 +3,7 @@
 import asyncio
 import ssl
 import re
+import sys
 
 
 class IRCBot:
@@ -86,7 +87,7 @@ class IRCBot:
                 if len(msg) > 1 and msg[0] == "PING":
                     self.sendraw("PONG %s\r\n" % (msg[1]))
             except:
-                print("Error")
+                print("Unexpected error:", sys.exc_info()[0])
 
 if __name__ == '__main__':
     bot = IRCBot("irc.rizon.net", 6697, "man",
